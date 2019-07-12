@@ -1,74 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="50dp"
+    android:paddingEnd="50dp"
     tools:context=".MainActivity">
+    
+ <LinearLayout
+        android:id="@+id/layout_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txtDate"
-        android:layout_width="124dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginEnd="32dp"
-        android:text="DATE : "
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtDateCaption"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="DATE : "
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/txtEur"
-        android:layout_width="121dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_eur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_date"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="EUR :"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtDate"
-        app:layout_constraintStart_toStartOf="@+id/txtTry"
-        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txtTry"
-        android:layout_width="121dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        <TextView
+            android:id="@+id/txtEurCaption"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="EUR : "
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtEur"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_try"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_eur"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="TRY : "
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEur" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtTryCaption"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="TRY : "
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtTry"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_below="@+id/save"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:onClick="show"
-        android:text="SHOW"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTry" />
+        android:text="DETAIL" />
 
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_below="@+id/layout_try"
+        android:layout_marginTop="16dp"
         android:onClick="save"
-        android:text="SAVE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show" />
+        android:text="SAVE" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
