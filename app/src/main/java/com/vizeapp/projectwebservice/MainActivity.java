@@ -22,16 +22,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    TextView txtDate, txtEur, txtTry;
-    static SQLiteDatabase database;
-
-    DownloadData downloadData = new DownloadData();
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtEur = findViewById(R.id.txtEur);
-        txtEur.setText("EUR : 1 €");
+        txtEur.setText("1 €");
         txtTry = findViewById(R.id.txtTry);
         txtDate = findViewById(R.id.txtDate);
 
@@ -41,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String strDateFormat = "yyyy-MM-dd";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         String formattedDate = dateFormat.format(date);
-        txtDate.setText("DATE :" + formattedDate);
+        txtDate.setText(formattedDate);
 
         //to access web service
         try {
@@ -51,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
 
+
+    }
 
     //database part
     //value -->  unit provision for Turkish currency
@@ -131,13 +126,15 @@ public class MainActivity extends AppCompatActivity {
 
                 JSONObject jsonObject1 = new JSONObject(rates);
                 String turkish = jsonObject1.getString("TRY"); // TRY is hint
-                txtTry.setText("TRY :" + turkish);
+                txtTry.setText(turkish);
 
             }catch (Exception e){
                 e.printStackTrace();
             }
             super.onPostExecute(s);
         }
+
+
     }
 
     // 'show' method to access second page
