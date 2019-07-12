@@ -40,7 +40,7 @@ public class Main2Activity extends AppCompatActivity {
 
             while (cursor != null) {
 
-                list.add(cursor.getString(nameIx) + " " + cursor.getString(valueIx));
+                list.add("DATE : " + cursor.getString(nameIx) + " " + "TRY : " + cursor.getString(valueIx));
                 cursor.moveToNext();
 
                 arrayAdapter.notifyDataSetChanged();
@@ -55,6 +55,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
+
 
 
 }
